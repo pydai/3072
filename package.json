@@ -10,8 +10,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "webpack",
-    "start": "webpack --watch"
+    "heroku-prebuild": "npm-install",
+    "start": "webpack --mode=development --watch"
   },
   "keywords": [],
   "author": "",
