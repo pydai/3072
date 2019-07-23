@@ -2,7 +2,7 @@
   "name": "2048",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "dependencies": {},
   "devDependencies": {
     "webpack": "^4.36.1",
@@ -10,7 +10,6 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-prebuild": "npm-install --dev",
     "start": "webpack --mode=development --watch"
   },
   "keywords": [],
