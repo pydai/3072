@@ -12,7 +12,7 @@
   height: 100px;
   justify-content: space-between;
   padding-bottom: 20px;
-  width: 500px;
+  width: 400px;
 }
 
 .game-title{
@@ -48,7 +48,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
-  width: 500px;
+  width: 450px;
 }
 
 .game-msg{
@@ -79,9 +79,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 15px;
-  width: 470px;
-  height: 470px;
+  padding: 7px;
+  width: 400px;
+  height: 400px;
 }
 
 .grid-row{
@@ -92,24 +92,27 @@
 div[class^="grid-cell"]{
   border-radius: 5px;
   background-color: rgba(238, 228, 218, 0.35);
-  width: 106.25px;
-  height: 106.25px;
+  width: 95px;
+  height: 95px;
 }
 
 .tile-inner{
   background-color: #eee4da;
   border-radius: 5px;
   font-size: 55px;
-  line-height: 106.25px;
+  line-height: 95px;
   position: absolute;
   text-align: center;
-  width: 106.25px;
-  height: 106.25px;
+  width: 95px;
+  height: 95px;
+  -webkit-transition: -webkit-transform 2s linear;
+  transition: transform 2s linear;
+  -webkit-animation: entrance 2s linear;
+  animation: entrance 2s linear;
 }
-
 
 .game-instructions{
   font-size: 18px;
-  width: 500px;
+  width: 380px;
   color: #776E65;
 }

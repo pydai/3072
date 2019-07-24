@@ -143,6 +143,7 @@ class Game {
   moveTile(tile, cell) {
     this.board.grids[tile.x][tile.y] = null;
     this.board.grids[cell.x][cell.y] = tile;
+    // this.view.shiftTile(tile, cell);
     tile.updatePosition(cell);
   }
 }

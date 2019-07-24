@@ -21,7 +21,6 @@ GameView.prototype.render = function render(board) {
       })
     })
 
-    // window.requestAnimationFrame(render);
   // });
 }
 
@@ -35,6 +34,17 @@ GameView.prototype.clearContainer = function () {
     }
   }
 };
+
+GameView.prototype.shiftTile = (tile, cell) => {
+  debugger
+  let tilePos = document.querySelector(`.grid-cell-${cell.x}-${cell.y}`);
+  // let cellPos = document.querySelector(`.grid-cell-${tile.x}-${tile.y}`);
+  let translateX = cell.x- tile.x;
+  let translateY = cell.y - tile.y;
+  var translate = 'translate(' + (translateX * 65) + 'px, ' + (translateY * 65) + 'px)';
+  tilePos.style.webkitTransform = translate;
+  tilePos.style.transform = translate;
+}
 
 GameView.prototype.addVisualTile = (cell) => {
   let tile = document.createElement('div');
@@ -76,6 +86,7 @@ GameView.prototype.addVisualTile = (cell) => {
   tile.innerHTML = cell.value;
   tile.style.fontWeight = 'bold';
   tile.style.color = '#776E65';
+
   return tile;
 }
 
