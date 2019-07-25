@@ -1,5 +1,4 @@
 const Tile = require('./tile');
-const GameView = require('./game_view');
 
 class Board {
   constructor(size){

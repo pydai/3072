@@ -36,9 +36,7 @@ GameView.prototype.clearContainer = function () {
 };
 
 GameView.prototype.shiftTile = (tile, cell) => {
-  debugger
   let tilePos = document.querySelector(`.grid-cell-${cell.x}-${cell.y}`);
-  // let cellPos = document.querySelector(`.grid-cell-${tile.x}-${tile.y}`);
   let translateX = cell.x- tile.x;
   let translateY = cell.y - tile.y;
   var translate = 'translate(' + (translateX * 65) + 'px, ' + (translateY * 65) + 'px)';
