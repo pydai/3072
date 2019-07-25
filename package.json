@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6"
   },
   "devDependencies": {
     "webpack": "^4.36.1",
