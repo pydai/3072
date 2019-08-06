@@ -15,7 +15,7 @@ class Game {
   }
 
   move(direction) {
-    // Iterate through the board and move tiles in direction
+    debugger
     let map = {
       'ArrowUp': {x:-1, y:0}, // Up
       'ArrowRight': {x:0, y:1}, // Right
@@ -30,20 +30,16 @@ class Game {
         let cell = {x:x, y:y};
         let tile = this.board.grids[x][y];
         if(tile){
-          // Find farthest position and second farthest for merge possibility.
           let movePositions = this.getFarthestPosition(cell, vector);
-          // Handle next position that is out of bounds.
           let nextMovePosition = movePositions.next;
           let next = this.board.cellContent(nextMovePosition);
 
-          // Merge vs no merge.
           if(next && tile.value === next.value){
             let merged = new Tile(cell, tile.value * 2);
             this.board.grids[next.x][next.y] = null;
             this.moveTile(merged, nextMovePosition);
-            // Record score.
             this.score += merged.value;
-            if(merged.value === 2048) this.won = true;
+            if(merged.value === 3052) this.won = true;
           }
           else{
             this.moveTile(tile, movePositions.farthest);
@@ -52,10 +48,8 @@ class Game {
       })
     })
 
-    // Update score.
     this.view.updateScore(this.score);
 
-    // Set win / lose conditions
     if(this.won) {
       this.winScreen();
     }
@@ -74,7 +68,6 @@ class Game {
 
   loseScreen() {
     this.view.gameOver();
-    // document.removeEventListener('keydown', this.move.bind(this));
   }
 
   movesAvailable() {

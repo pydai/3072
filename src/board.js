@@ -17,7 +17,6 @@ class Board {
     }
   }
 
-  // Border functions
   withinBorder(cell) {
     if(cell.x >= 0 && cell.x < this.size && cell.y >= 0 && 
       cell.y < this.size) {
@@ -29,7 +28,6 @@ class Board {
   cellAvailable(cell) {
     if(this.withinBorder(cell)) {
       let tile = this.grids[cell.x][cell.y];
-      // Either cell has no tile or same value.
       if (tile === null) {
         return true;
       }
@@ -61,7 +59,6 @@ class Board {
     this.addStartTiles();
   }
 
-  // Place initial tiles
   addStartTiles() {
     let initialNumberOfTiles = 2;
     for (let i = 0; i < initialNumberOfTiles; i++) {
@@ -69,11 +66,10 @@ class Board {
     }
   }
 
-  // Add random tiles after movement
   placeRandomTile() {
     let randomCell = this.randomAvailableCell();
     if(randomCell) {
-      let randomTileValue = 2;
+      let randomTileValue = 3;
       let randomTile = new Tile(randomCell, randomTileValue);
       this.placeTile(randomTile);
     }
@@ -89,7 +85,6 @@ class Board {
         }
       }
     }
-
     let cellsLength = availableCells.length;
     let randomCell = availableCells[Math.floor(Math.random() * cellsLength)];
     return randomCell;
