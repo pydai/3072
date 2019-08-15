@@ -1,7 +1,7 @@
 # 3052
 [Live Site](https://js-3052.herokuapp.com/)
 
-3052 is a web application built with vanilla JS where the user can use the directional arrows to shift all tiles on the board.
+3052 is a web application built with vanilla JS where the user shifts tiles on the board to try and create the 3052 tile.
 
 ### Controls: Directional arrows to shift tiles around.
 * The game begins with two tiles randomly generated on the board.
