@@ -105,10 +105,10 @@ div[class^="grid-cell"]{
   text-align: center;
   width: 95px;
   height: 95px;
-  -webkit-transition: -webkit-transform 2s linear;
+  /* -webkit-transition: -webkit-transform 2s linear;
   transition: transform 2s linear;
   -webkit-animation: entrance 2s linear;
-  animation: entrance 2s linear;
+  animation: entrance 2s linear; */
 }
 
 .game-instructions{

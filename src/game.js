@@ -15,7 +15,6 @@ class Game {
   }
 
   move(direction) {
-    debugger
     let map = {
       'ArrowUp': {x:-1, y:0}, // Up
       'ArrowRight': {x:0, y:1}, // Right

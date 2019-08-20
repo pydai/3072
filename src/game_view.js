@@ -9,9 +9,6 @@ function GameView(size) {
 
 GameView.prototype.render = function render(board) {
   this.clearContainer();
-  
-  debugger
-
   board.grids.forEach(row => {
     row.forEach(cell => {
       if(cell) {
@@ -34,23 +31,19 @@ GameView.prototype.clearContainer = function () {
   }
 };
 
-GameView.prototype.shiftTile = (tile, cell) => {
-  let tilePos = document.querySelector(`.grid-cell-${cell.x}-${cell.y}`);
-  let translateX = cell.x- tile.x;
-  let translateY = cell.y - tile.y;
-  var translate = 'translate(' + (translateX * 65) + 'px, ' + (translateY * 65) + 'px)';
-  tilePos.style.webkitTransform = translate;
-  tilePos.style.transform = translate;
-}
+// GameView.prototype.shiftTile = (tile, cell) => {
+//   let tilePos = document.querySelector(`.grid-cell-${cell.x}-${cell.y}`);
+//   let translateX = cell.x- tile.x;
+//   let translateY = cell.y - tile.y;
+//   var translate = 'translate(' + (translateX * 65) + 'px, ' + (translateY * 65) + 'px)';
+//   tilePos.style.webkitTransform = translate;
+//   tilePos.style.transform = translate;
+// }
 
 GameView.prototype.addVisualTile = (cell) => {
   let tile = document.createElement('div');
   tile.classList.add('tile-inner');
-
-  debugger
-
   if(cell.value === 3) {
-    debugger
     tile.style.backgroundColor = '#eee4da';
   }
   else if(cell.value === 6) {
@@ -77,16 +70,17 @@ GameView.prototype.addVisualTile = (cell) => {
   else if (cell.value === 768) {
     tile.style.backgroundColor = '#edc850';
   }
-  else if (cell.value === 1526) {
+  else if (cell.value === 1536) {
     tile.style.backgroundColor = '#edc53f';
+    tile.style.fontSize = '45px';
   }
-  else if (cell.value === 3052) {
+  else if (cell.value === 3072) {
     tile.style.backgroundColor = '#edc22e';
+    tile.style.fontSize = '45px';
   }
   tile.innerHTML = cell.value;
   tile.style.fontWeight = 'bold';
-  tile.style.color = '#776E65';
-
+  tile.style.fontSize = '45px';
   return tile;
 }
 
