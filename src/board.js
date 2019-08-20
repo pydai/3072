@@ -69,7 +69,7 @@ class Board {
   placeRandomTile() {
     let randomCell = this.randomAvailableCell();
     if(randomCell) {
-      let randomTileValue = 1536;
+      let randomTileValue = 3;
       console.log(randomTileValue);
       let randomTile = new Tile(randomCell, randomTileValue);
       this.placeTile(randomTile);
