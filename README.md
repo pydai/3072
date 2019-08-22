@@ -6,9 +6,6 @@
 ### Screenshots
 <img width="1433" alt="Screen Shot 2019-08-21 at 4 12 06 PM" src="https://user-images.githubusercontent.com/7242067/63474608-9c388400-c42e-11e9-9553-1d8e25136181.png">
 
-### Code Snippet
-<img width="1437" alt="Screen Shot 2019-08-21 at 4 22 39 PM" src="https://user-images.githubusercontent.com/7242067/63474983-fa199b80-c42f-11e9-8147-7a1d77144f2e.png">
-
 ### Controls: Directional arrows to shift tiles around.
 * The game begins with two tiles randomly generated on the board.
 * When tiles are shifted they either merge or collide with tiles on the board in the proper position if their values match.
