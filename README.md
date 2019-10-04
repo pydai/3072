@@ -1,5 +1,5 @@
 # 3072
-[Live Site](https://js-3052.herokuapp.com/)
+[Live Site](https://js-3072.herokuapp.com/)
 
 3072 is a web application built with vanilla JS where the user shifts tiles on the board to try and create the 3052 tile.
 
