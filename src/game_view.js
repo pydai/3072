@@ -7,6 +7,7 @@ function GameView(size) {
   this.scoreBoard = document.querySelector('.score-board');
 }
 
+// Renders and displays each tile that is valid on the board.
 GameView.prototype.render = function render(board) {
   this.clearContainer();
   board.grids.forEach(row => {
@@ -20,6 +21,7 @@ GameView.prototype.render = function render(board) {
   })
 }
 
+// Clears the board and removes each tile.
 GameView.prototype.clearContainer = function () {
   for(let row = 0; row < this.size; row+=1) {
     for(let col = 0; col < this.size; col+=1) {
@@ -40,6 +42,7 @@ GameView.prototype.clearContainer = function () {
 //   tilePos.style.transform = translate;
 // }
 
+// Renders the tile with specified properties.
 GameView.prototype.addVisualTile = (cell) => {
   let tile = document.createElement('div');
   tile.classList.add('tile-inner');
@@ -84,16 +87,19 @@ GameView.prototype.addVisualTile = (cell) => {
   return tile;
 }
 
+// Updates the score.
 GameView.prototype.updateScore = (score) => {
   let scoreBoard = document.querySelector('.score-board');
   scoreBoard.innerHTML = score;
 }
 
+// Render's win screen.
 GameView.prototype.winGame = () => {
   let messageScreen = document.querySelector('.message-screen');
   messageScreen.innerHTML = 'You win!';
 }
 
+// Render's lose screen.
 GameView.prototype.gameOver = () => {
   let messageScreen = document.querySelector('.message-screen');
   messageScreen.innerHTML = 'GAME OVER';

@@ -14,6 +14,8 @@ class Game {
     this.input = new Input(this.move.bind(this));
   }
 
+  // Handles all of the move logic. Including calculating the proper cell location to move, handling merge conflicts
+  // win and lose conditions, and placing the new randomized tile.
   move(direction) {
     let map = {
       'ArrowUp': {x:-1, y:0}, // Up
@@ -38,7 +40,7 @@ class Game {
             this.board.grids[next.x][next.y] = null;
             this.moveTile(merged, nextMovePosition);
             this.score += merged.value;
-            if(merged.value === 3052) this.won = true;
+            if(merged.value === 3072) this.won = true;
           }
           else{
             this.moveTile(tile, movePositions.farthest);
@@ -61,14 +63,17 @@ class Game {
     this.view.render(this.board);
   }
 
+  // Handle win logic.
   winScreen() {
     this.view.winGame();
   }
 
+  // Handle lose logic.
   loseScreen() {
     this.view.gameOver();
   }
 
+  // Determines if there are any available moves on the board. Returns a boolean value.
   movesAvailable() {
     let map = {
       0: { x: -1, y: 0 }, // Up
@@ -104,6 +109,8 @@ class Game {
     }
   }
 
+  // Looks for the farthest position in the direction of the vector, until the edge of the board is found or the
+  // next tile is located. 
   getFarthestPosition(cell, vector) {
     let previous;
     do {
@@ -117,6 +124,7 @@ class Game {
     };
   }
 
+  // Takes a vector and reverses the grid to access 
   buildGrid(vector) {
     let tmp = {x: [], y: []};
     for(let i = 0; i < this.size; i++){
@@ -132,6 +140,8 @@ class Game {
     return tmp;
   }
 
+  // Moving tile requires assigning previous tile location as null and then reassigning the grid's next cell location
+  // as the tile. The tile then updates its own position as the location of that cell.
   moveTile(tile, cell) {
     this.board.grids[tile.x][tile.y] = null;
     this.board.grids[cell.x][cell.y] = tile;
