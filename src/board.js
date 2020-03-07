@@ -1,6 +1,14 @@
 const Tile = require('./tile');
 
+// The board class implements logic for the rendering and handling of any functionality involving the 
+//board. Here, we can check for empty tiles, whether or not cells are within the board, content within
+//the board, randomizing start tile positions, randomizing start tile locations, finding randomized
+//locations, and placing and removing tiles.
+// We import the tile class so that we can abstract all functionality for the board including handling
+//tiles within the board class. We do not need to know every detail regarding the tiles themselves; we
+//just need to be able to place/remove them from the baord class.
 class Board {
+  // Constructor for setting up the board
   constructor(size){
     this.size = size;
     this.grids = [];
@@ -18,7 +26,7 @@ class Board {
     }
   }
 
-  // Border check to make sure that accessing cells on the board.
+  // Border check to make sure that the cells being accessed are on the board.
   withinBorder(cell) {
     if(cell.x >= 0 && cell.x < this.size && cell.y >= 0 && 
       cell.y < this.size) {
@@ -27,7 +35,7 @@ class Board {
     return false;
   }
 
-  // Function to return whether there is a tile on the specific cell grid.
+  // Function to return whether there is a tile on the specific cell grid. Returns true or false.
   cellAvailable(cell) {
     if(this.withinBorder(cell)) {
       let tile = this.grids[cell.x][cell.y];
@@ -40,7 +48,7 @@ class Board {
     }
   }
 
-  // Returns the information on the cell grid. Returns the tile if the tile is not empty.
+  // Returns the information on the cell grid. Returns the tile if the tile is not empty, else null.
   cellContent(cell) {
     if(this.withinBorder(cell)) {
       return this.grids[cell.x][cell.y];
@@ -55,7 +63,7 @@ class Board {
     this.grids[tile.x][tile.y] = tile;
   }
 
-  // Removes the cell grid space.
+  // Assigns the cell grid space as null.
   removeTile(tile) {
     this.grids[tile.x][tile.y] = null;
   }
@@ -66,7 +74,7 @@ class Board {
     this.addStartTiles();
   }
 
-  // Initializes the board with two random tiles.
+  // Initializes the board with two tiles in random locations.
   addStartTiles() {
     let initialNumberOfTiles = 2;
     for (let i = 0; i < initialNumberOfTiles; i++) {
@@ -101,14 +109,14 @@ class Board {
   }
 
   // If position on the board is within the border then return the tile, else return null.
-  cellContent(movePosition) {
-    if(this.withinBorder(movePosition)) {
-      return this.grids[movePosition.x][movePosition.y];
-    }
-    else{
-      return null;
-    }
-  }
+  // cellContent(movePosition) {
+  //   if(this.withinBorder(movePosition)) {
+  //     return this.grids[movePosition.x][movePosition.y];
+  //   }
+  //   else{
+  //     return null;
+  //   }
+  // }
 
 }
 
