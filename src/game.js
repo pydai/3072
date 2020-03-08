@@ -3,6 +3,9 @@ const GameView = require('./game_view');
 const Input = require('./input');
 const Tile = require('./tile');
 
+// The Game class handles all of the instructions for how the gaming logic is
+//implemented. We handle all of the movement logic within the game including
+//whether or not there are moves available. 
 class Game {
   constructor() {
     this.size = 4;
@@ -10,19 +13,23 @@ class Game {
     this.won = false;
     this.board = new Board(this.size);
     this.view = new GameView(this.size);
+    // We call the view class's render function on the Board class.
     this.view.render(this.board);
+    // Bind the move function as a callback to the Input class. A call back is
+    //when you have a function within the parameters of another function.
     this.input = new Input(this.move.bind(this));
   }
 
-  // Handles all of the move logic. Including calculating the proper cell location to move, handling merge conflicts
-  // win and lose conditions, and placing the new randomized tile.
+  // Handles all of the move logic. Including calculating the proper cell 
+  //location to move, handling merge conflicts win and lose conditions, and
+  //placing the new randomized tile.
   move(direction) {
     let map = {
       'ArrowUp': {x:-1, y:0}, // Up
       'ArrowRight': {x:0, y:1}, // Right
       'ArrowDown': {x:1, y:0}, // Down
       'ArrowLeft': {x:0, y:-1} // Left
-    }
+    };
     let vector = map[direction];
     let grid = this.buildGrid(vector);
 
@@ -46,8 +53,8 @@ class Game {
             this.moveTile(tile, movePositions.farthest);
           }
         }
-      })
-    })
+      });
+    });
 
     this.view.updateScore(this.score);
 
@@ -80,7 +87,7 @@ class Game {
       1: { x: 0, y: 1 }, // Right
       2: { x: 1, y: 0 }, // Down
       3: { x: 0, y: -1 } // Left
-    }
+    };
     let matchesAvailable = false;
     let moves = 0;
     for(let x = 0; x < this.size; x+=1) {
