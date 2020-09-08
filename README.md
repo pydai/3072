@@ -65,6 +65,5 @@ class Game {
 * When tiles are shifted they either merge or collide with tiles on the board in the proper position if their values match.
 * A score is generated to keep track of the number of merged tiles on the board.
 
-
 ### Future Implementations
 * Valid move logic. Tiles should not move if there is no possible merge or available movement in direction of user input.
