@@ -3,8 +3,6 @@
 
 3072 is a web application built with vanilla JS where the user shifts tiles on the board to create the 3072 tile.
 
-
-
 ### Screenshots
 <img width="1433" alt="Screen Shot 2019-08-21 at 4 12 06 PM" src="https://user-images.githubusercontent.com/7242067/63474608-9c388400-c42e-11e9-9553-1d8e25136181.png">
 
